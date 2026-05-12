@@ -419,6 +419,76 @@ Dependencies
 
                $ sudo npm install -g rtlcss
 
+.. note::
+   If you want to use **Odoo's AI features**, the `pg-vector` PostgreSQL extension is required.
+   Note that `pg-vector` is available only for postgres version 15 and up.
+
+   #. Navigate to your temporary folder
+
+      .. tabs::
+
+         .. group-tab:: Linux and macOS
+
+            .. code-block:: console
+
+               $ cd /tmp
+
+         .. group-tab:: Windows
+
+            .. code-block:: console
+
+               $ cd %TEMP%
+
+   #. Clone the `pg-vector` `GitHub repository <https://github.com/pgvector/pgvector>`_:
+
+      .. code-block:: console
+
+         $ git clone https://github.com/pgvector/pgvector.git
+
+   #. Navigate into the directory:
+
+      .. code-block:: console
+
+         $ cd pgvector
+
+   .. tabs::
+
+      .. group-tab:: Linux and macOS
+         If you run into any issues during installation, make sure to check the official `installation notes <https://github.com/pgvector/pgvector#installation-notes---linux-and-mac>`_
+
+         #. Compile the extension:
+
+            .. code-block:: console
+
+               $ make
+
+         #. Install the extension:
+
+            .. code-block:: console
+
+               $ sudo make install
+
+      .. group-tab:: Windows
+         Ensure C++ support in Visual Studio is installed and `run x64 Native Tools Command Prompt for VS [version]` as administrator
+
+         #. Set your `PGROOT` environment variable:
+
+            .. code-block:: console
+
+               $ set "PGROOT=C:\Program Files\PostgreSQL\[Your PostgreSQL Version]"
+
+         #. Compile the extension:
+
+            .. code-block:: console
+
+               $ nmake /F Makefile.win
+
+         #. Install the extension:
+
+            .. code-block:: console
+
+               $ nmake /F Makefile.win install
+
 .. warning::
    `wkhtmltopdf` is not installed through **pip** and must be installed manually in `version 0.12.6
    <https://github.com/wkhtmltopdf/packaging/releases/tag/0.12.6.1-3>`_ for it to support headers
