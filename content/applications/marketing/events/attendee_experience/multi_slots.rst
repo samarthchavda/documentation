@@ -82,5 +82,12 @@ Slot registration
 =================
 
 Similar to registering for an event, attendees can register for slots from the event website. When
-a visitor arrives on the event website, they can click the :guilabel:`Register` button to select
-the desired slot and purchase a ticket.
+a visitor arrives on the event website, they can click the :guilabel:`Register` button to open a
+:guilabel:`Slots` pop-up window and select their desired slot.
+
+.. note::
+   Visitors are not able to see or register for any slots ending before the time of registration.
+
+After confirming their selection, visitors follow the rest of the :doc:`ticket registration
+<../promote_monetize/sell_tickets>` process via the website, including choosing their desired
+tickets and finalizing their payment.
