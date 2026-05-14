@@ -2,17 +2,11 @@
 Quotation & Section templates
 =============================
 
-Reusable quotation templates can be made in Odoo's **Sales** app for common products or services.
+Reusable quotation and section templates can be made in Odoo's **Sales** app for common products or
+services.
 
 By using these templates, quotations can be tailored and sent to customers at a quicker pace,
 without having to create new quotations from scratch every time a sales negotiation occurs.
-
-There are two types of templates the Sales app offers:
-
-- Quotation templates: Configure a preset sales quote that can be applied directly from the sales
-  quote.
-- Section templates: Organized order line sections that are saved and applied directly from the
-  sales quote. Also can be applied independently of quotation templates.
 
 Configuration
 =============
@@ -33,8 +27,8 @@ Upon activating the :guilabel:`Quotation Templates` feature, an internal :icon:`
 Clicking this link reveals the :guilabel:`Templates` page, from which templates can be
 created, viewed, and edited.
 
-Before leaving the :guilabel:`Settings` page, do not forget to click the :guilabel:`Save` button to
-save all changes made during the session.
+Before leaving the :guilabel:`Settings` page, click the :guilabel:`Save` button to save all changes
+made during the session.
 
 .. _sales/send_quotations/create_templates:
 
@@ -43,8 +37,8 @@ Create quotation templates
 
 To create a quotation template, click the :guilabel:`Quotation Templates` link on the
 :guilabel:`Settings` page once :guilabel:`Quotation templates` are enabled, or navigate to
-:menuselection:`Sales app --> Configuration --> Templates`. Both options reveal the
-*Templates* page, where quotation templates can be created, viewed, and edited.
+:menuselection:`Sales app --> Configuration --> Templates`. Both options reveal the *Templates*
+page, where quotation templates can be created, viewed, and edited.
 
 .. image:: quote_template/quotation-templates-page.png
    :alt: Quotation templates page in the Odoo Sales application.
@@ -55,22 +49,19 @@ corner. Doing so reveals a blank quotation template form that can be customized.
 .. image:: quote_template/blank-quotation-form.png
    :alt: Create a new quotation template on Odoo Sales.
 
-Start by entering a name for the template in the :guilabel:`Template` field.
+Start by entering a name for the template in the :guilabel:`Template` field. Then, in the
+:guilabel:`Quote calculator` field,
 
-Then, in the :guilabel:`Quote calculator` field,
+.. important::
+   The :guilabel:`Quote calculator` field is only available for Quotation templates.
 
-:guilabel:`Share` checkbox
-
-:guilabel:`Sales Team`
-
+Enable the :guilabel:`Share` checkbox to make the template accessible to other salespeople. Set the
+:guilabel:`Sales Team` field to a specific team if applicable.
 
 If working in a multi-company environment, use the :guilabel:`Company` field to designate to which
 company this quotation template applies.
 
-If a journal is set in the :guilabel:`Invoicing Journal` field, all sales orders with this template
-will invoice in that specified journal. If no journal is set in this field, the sales journal with
-the lowest sequence is used.
-
+.. _sales/sales_quotations/lines-tab:
 
 Lines tab
 ---------
@@ -123,13 +114,9 @@ To delete any line item from the :guilabel:`Lines` tab (product, section, and/or
 Optional Products tab
 ---------------------
 
-Using *optional products* is a marketing strategy that involves the cross-selling of products along
-with a core product. The aim is to offer useful and related products to customers, which may result
-in an increased sale.
-
-.. example::
-   If a customer wants to buy a car, they have the choice to order massaging seats as
-   an additional product that compliments the car, or ignore the offer and buy the car alone.
+Using :doc:`optional_products` is a marketing strategy that involves the cross-selling of products
+along with a core product. The aim is to offer useful and related products to customers, which may
+result in an increased sale.
 
 Optional products appear as a section on the bottom of sales orders and eCommerce pages. Customers
 can immediately add them to their online sales orders themselves, if desired.
@@ -168,8 +155,9 @@ Settings tab
 
 The :guilabel:`Settings` tab provides extra confirmation settings to the quotation template.
 
-In the :guilabel:`Quotation Validity` field, designate how many days the quotation template is valid
-for, or leave the field on the default `0` to keep the template valid indefinitely.
+In the *Confirmation* section, the :guilabel:`Quotation Validity` field designates how many days the
+quotation template is valid for, or leave the field on the default `0` to keep the template valid
+indefinitely.
 
 If the :guilabel:`Online Signature` and/or :guilabel:`Online Payment` features are activated in the
 :guilabel:`Settings` (:menuselection:`Sales app --> Configuration --> Settings`), those options are
@@ -206,26 +194,50 @@ preconfigured email template to be sent to customers upon confirmation of an ord
    When all modifications are complete, click :guilabel:`Save & Close` to save the email template
    and return to the quotation form.
 
+In the *Invoicing* section is the :guilabel:`Invoicing Journal` field. If a journal is selected for
+the field, all sales orders with this template are invoiced in that specified journal. If no journal
+is selected, the sales journal with the lowest sequence is used.
+
 Create section templates
 ========================
 
-Navigate to :menuselection:`Sales app --> Configuration --> Templates` and click the :guilabel:`New`
-button, located in the upper-left corner. Doing so reveals a blank quotation template form that can
-be customized.
+Section templates can be created on the *Templates* page or directly from a sales quote. To create a
+template from the  *Templates* page, navigate to :menuselection:`Sales app --> Configuration -->
+Templates` and click the :guilabel:`New` button, located in the upper-left corner. A blank template
+form displays.
 
-Set the :guilabel:`Type` field to :guilabel:`Section`. Doing so changes the form so only the
-:guilabel:`Lines` tab is available.
+Enter the name of the template in :guilabel:`Template` field and set the :guilabel:`Type` field to
+:guilabel:`Section`. To add sections, products, or notes follow the instructions in the
+:ref:`sales/sales_quotations/lines-tab` section.
 
-Use quotation templates
-=======================
+.. important::
+   Only the :guilabel:`Lines` tab is available for Section templates. Templates with the same name
+   and created by the same user are overwritten when saved. Combos **cannot** be saved as a Section
+   template.
 
-When creating a quotation (:menuselection:`Sales app --> New`), choose a preconfigured template in
+To create a Section template from a sales quote, navigate to :menuselection:`Sales app --> Orders
+--> Quotations` and :ref:`create a new quote <sales/create-quotation>` or select an existing one.
+
+Add a product or section in the :guilabel:`Order Lines` tab, then click the :icon:`fa-ellipsis-v`
+:guilabel:`Ellipsis` icon on the right side of the order line. Select the :icon:`fa-save`
+:guilabel:`Save as Template` icon to save the section.
+
+.. image:: quote_template/section-save-as-template-option.png
+   :alt: A sales quote's order line submenu that contains the Save as Template option.
+
+Use templates
+=============
+
+When creating a quote (:menuselection:`Sales app --> New`), choose a preconfigured template in
 the :guilabel:`Quotation Template` field.
 
 .. note::
    The order of the templates in the :guilabel:`Quotation Template` field is determined by the order
    of the templates in the Quotation Templates form. The order of the quotations in the Quotation
    Templates form does **not** affect anything else.
+
+To apply a Section template, click :guilabel:`Add a section` and select a template from the
+drop-down menu.
 
 To view what the customer will see, click the :guilabel:`Preview` button at the top of the page to
 see how the quotation template appears on the front-end of the website through Odoo's customer
