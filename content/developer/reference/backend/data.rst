@@ -72,9 +72,7 @@ following attributes:
 ``context``
     context to use when creating the record
 ``forcecreate``
-    in update mode whether the record should be created if it doesn't exist
-
-    Requires an :term:`external id`, defaults to ``True``.
+    in update mode whether the record should be created if it doesn't exis
 
 ``field``
 ---------
